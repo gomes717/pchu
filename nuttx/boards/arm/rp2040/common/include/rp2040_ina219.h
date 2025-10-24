@@ -70,7 +70,7 @@ extern "C"
  *
  ****************************************************************************/
 
-int board_ina219_initialize(int busno);
+int board_ina219_initialize(int busno, uint8_t address, int32_t shunt_val);
 
 #undef EXTERN
 #ifdef __cplusplus

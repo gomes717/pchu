@@ -905,10 +905,32 @@ config SENSORS_INA219
 	---help---
 		Enable driver support for the Texas Instruments INA219 current and voltage monitor.
 
+if SENSORS_INA219
+
 config INA219_I2C_FREQUENCY
 	int "INA219 I2C frequency"
 	default 400000
 	depends on SENSORS_INA219
+config INA219_I2C_CH
+	int "INA219 I2C channel number"
+	default 0
+	range 0 1
+	---help---
+		Select I2C channel number to use INA219.
+config INA219_ADDR
+	hex "INA219 address"
+	default 0x40
+	range 0x40 0x44
+	---help---
+		Select the address of INA219.
+config INA219_I2C_SHUNT
+	int "INA219 shunt resistor (micro-ohms)"
+	default 8000
+	range 1000 1000000
+	---help---
+		Value of the shunt resistor in micro-ohms.
+
+endif #SENSORS_INA219
 
 config SENSORS_INA226
 	bool "INA226/INA230 current and voltage monitor"

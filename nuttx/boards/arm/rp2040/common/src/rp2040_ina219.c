@@ -72,7 +72,7 @@
  *
  ****************************************************************************/
 
-int board_ina219_initialize(int busno)
+int board_ina219_initialize(int busno, uint8_t address, int32_t shunt_val)
 {
   struct i2c_master_s *i2c;
   char devpath[14];
@@ -92,7 +92,7 @@ int board_ina219_initialize(int busno)
   /* Then register the sensor */
 
   snprintf(devpath, sizeof(devpath), "/dev/voltamp%d", devno);
-  ret = ina219_register(devpath, i2c, 0x40, 100000, 0x00);
+  ret = ina219_register(devpath, i2c, address, shunt_val, 0x00);
   if (ret < 0)
     {
       syslog(LOG_ERR, "ERROR: Error registering ina219\n");

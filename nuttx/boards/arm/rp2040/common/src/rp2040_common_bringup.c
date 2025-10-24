@@ -529,7 +529,7 @@ int rp2040_common_bringup(void)
 #ifdef CONFIG_SENSORS_INA219
   /* Configure and initialize the INA219 sensor in I2C0 */
 
-  ret = board_ina219_initialize(0);
+  ret = board_ina219_initialize(CONFIG_INA219_I2C_CH, CONFIG_INA219_ADDR, CONFIG_INA219_I2C_SHUNT);
   if (ret < 0)
     {
       syslog(LOG_ERR, "ERROR: rp2040_ina219_initialize() failed: %d\n", ret);
