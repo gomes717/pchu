@@ -25,39 +25,18 @@
  ****************************************************************************/
 
 #include <nuttx/config.h>
-#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/wait.h>
+#include <stdint.h>
+#include <stdlib.h>
 #include <stdio.h>
-#include <fcntl.h>
 #include <unistd.h>
-#include <nuttx/sensors/ina219.h>
+#include <sched.h>
 
 /****************************************************************************
  * Public Functions
  ****************************************************************************/
 
 /****************************************************************************
- * ina219_main
+ * controller_main
  ****************************************************************************/
-
-int main(int argc, FAR char *argv[])
-{
-  struct ina219_s sample;
-  int fd;
-  int ret;
-
-  fd = open("/dev/voltamp0", O_RDWR);
-  while (1)
-    {
-      ret = read(fd, &sample, sizeof(sample));
-      if (ret != sizeof(sample))
-        {
-          break;
-        }
-
-      printf("U=%12" PRIu32 " uV I=%12" PRId32 " uA\n",
-             sample.voltage, sample.current);
-    }
-
-  close(fd);
-  return 0;
-}

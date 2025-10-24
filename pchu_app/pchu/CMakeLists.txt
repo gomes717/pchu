@@ -20,16 +20,33 @@
 #
 # ##############################################################################
 
-if(CONFIG_PCHU_INA219)
+if(CONFIG_PCHU_MANAGER)
+  # ############################################################################
+  # Sources
+  # ############################################################################
+
+  set(CSRCS
+      src/manager_main.c src/power_main.c
+      src/control_main.c src/comm_main.c
+      src/odometry_main.c)
+
+  # ############################################################################
+  # Include Directory
+  # ############################################################################
+
+  set(INCDIR inc)
+
   nuttx_add_application(
     NAME
-    ${CONFIG_PCHU_INA219_PROGNAME}
+    ${CONFIG_PCHU_MANAGER_PROGNAME}
     PRIORITY
-    ${CONFIG_PCHU_INA219_PRIORITY}
+    ${CONFIG_PCHU_MANAGER_PRIORITY}
     STACKSIZE
-    ${CONFIG_PCHU_INA219_STACKSIZE}
+    ${CONFIG_PCHU_MANAGER_STACKSIZE}
     MODULE
-    ${CONFIG_PCHU_INA219}
+    ${CONFIG_PCHU_MANAGER}
     SRCS
-    ina219_main.c)
+    ${CSRCS}
+    INCLUDE_DIRECTORIES
+    ${INCDIR})
 endif()

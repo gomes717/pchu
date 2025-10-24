@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "rp2040_common_bringup.h": "c",
+        "rp2040_common_initialize.h": "c",
+        "rp2040_pico.h": "c",
+        "config.h": "c",
+        "fcntl.h": "c",
+        "unistd.h": "c",
+        "sched.h": "c",
+        "control_main.h": "c",
+        "manager_main.h": "c",
+        "struct_timespec.h": "c",
+        "stdlib.h": "c",
+        "power_main.h": "c",
+        "comm_main.h": "c",
+        "rp2040_i2c.h": "c",
+        "odometry_main.h": "c",
+        "clock.h": "c",
+        "chrono": "c",
+        "pwm.h": "c"
+    }
+}

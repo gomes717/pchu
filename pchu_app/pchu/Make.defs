@@ -20,6 +20,6 @@
 #
 ############################################################################
 
-ifneq ($(CONFIG_PCHU_INA219),)
-CONFIGURED_APPS += $(APPDIR)/pchu_app/ina219_tester
+ifneq ($(CONFIG_PCHU_MANAGER),)
+CONFIGURED_APPS += $(APPDIR)/pchu_app/pchu
 endif

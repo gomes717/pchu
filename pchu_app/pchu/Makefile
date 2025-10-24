@@ -22,15 +22,17 @@
 
 include $(APPDIR)/Make.defs
 
-# INA219 built-in application info
+# MANAGER built-in application info
 
-PROGNAME = $(CONFIG_PCHU_INA219_PROGNAME)
-PRIORITY = $(CONFIG_PCHU_INA219_PRIORITY)
-STACKSIZE = $(CONFIG_PCHU_INA219_STACKSIZE)
-MODULE = $(CONFIG_PCHU_INA219)
+PROGNAME = $(CONFIG_PCHU_MANAGER_PROGNAME)
+PRIORITY = $(CONFIG_PCHU_MANAGER_PRIORITY)
+STACKSIZE = $(CONFIG_PCHU_MANAGER_STACKSIZE)
+MODULE = $(CONFIG_PCHU_MANAGER)
 
-# INA219 Example
+# MANAGER Example
 
-MAINSRC = ina219_main.c
+MAINSRC = src/manager_main.c
+
+CSRCS = src/manager_main.c src/power_main.c src/control_main.c src/comm_main.c src/odometry_main.c
 
 include $(APPDIR)/Application.mk

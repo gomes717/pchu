@@ -3,28 +3,27 @@
 # see the file kconfig-language.txt in the NuttX tools repository.
 #
 
-config PCHU_INA219
-	tristate "INA219 Tester"
+config PCHU_MANAGER
+	tristate "Manager app"
 	default n
-	depends on SENSORS_INA219
 	---help---
-		Enable the INA219 tester
+		Enable the manager application
 
-if PCHU_INA219
+if PCHU_MANAGER
 
-config PCHU_INA219_PROGNAME
+config PCHU_MANAGER_PROGNAME
 	string "Program name"
-	default "ina219_test"
+	default "ManagerApp"
 	---help---
 		This is the name of the program that will be used when the NSH ELF
 		program is installed.
 
-config PCHU_INA219_PRIORITY
-	int "INA219 task priority"
+config PCHU_MANAGER_PRIORITY
+	int "Manager task priority"
 	default 100
 
-config PCHU_INA219_STACKSIZE
-	int "INA219 stack size"
+config PCHU_MANAGER_STACKSIZE
+	int "Manager app stack size"
 	default DEFAULT_TASK_STACKSIZE
 
 endif

@@ -6,5 +6,5 @@
 #
 
 menu "PCHU"
-source "/home/gomes/Documents/develop/PCHU/pchu_app/ina219_tester/Kconfig"
+source "/home/gomes/Documents/develop/PCHU/pchu_app/pchu/Kconfig"
 endmenu # PCHU
