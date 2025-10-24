@@ -1,0 +1,1 @@
+include $(wildcard $(APPDIR)/pchu_app/*/Make.defs)
